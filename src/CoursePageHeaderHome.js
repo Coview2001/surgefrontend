@@ -137,7 +137,7 @@ import './SQL and PY/Header.css';
 import { useNavigate } from 'react-router-dom';
 import ExskilenceInternshipCardpreview from './ExskilenceInternshipCardpreview';
 import html2canvas from 'html2canvas';
-// import axios from 'axios';
+import axios from 'axios';
 import SessionTimeout from './SessionTimeout';
 import { RiCustomerService2Fill } from "react-icons/ri";
 import CryptoJS from 'crypto-js';
@@ -259,27 +259,15 @@ function CoursePageHeaderHome() {
 
     const handleLogOut = async () => {
         try {
-          const response = await fetch('https://surgebackend.azurewebsites.net/logout/', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              StudentId: decryptedStudentId,
-            }),
-          });
-      
-          if (!response.ok) {
-            throw new Error('Failed to log out');
-          }
-      
-          navigate('/');
+            await axios.post('https://surgebackend.azurewebsites.net/logout/', {
+                StudentId: decryptedStudentId
+            });
+            
+            navigate('/')
         } catch (error) {
-          console.error('Error logging out:', error);
-          alert('Failed to log out. Please try again.');
+            console.error('Error logging out:', error);
         }
-      };
-      
+    };
 
     return (
         <div className='' style={{ width: '100%' }} >
