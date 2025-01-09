@@ -21,8 +21,6 @@
     "@mui/material": "^6.3.1",
     "@mui/x-date-pickers": "^7.23.3",
     "@react-oauth/google": "^0.12.1",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@uiw/react-codemirror": "^4.23.0",
     "ajv": "^8.17.1",
@@ -70,12 +68,12 @@
     "vm-browserify": "^1.1.2",
     "web-vitals": "^2.1.4"
   },
-"scripts": {
-  "start": "react-scripts start",
-  "build": "cross-env CI=false GENERATE_SOURCEMAP=false react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject"
-},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "cross-env CI=false GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
