@@ -10,7 +10,7 @@ const Editor = ({ language, value, onChange }) => {
         mode: language,
       }}
       value={value}
-      onBeforeChange={(editor, data, value) => {
+      onBeforeChange={( value) => {
         onChange(value);
       }}
     />

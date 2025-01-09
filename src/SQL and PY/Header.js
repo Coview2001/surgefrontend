@@ -2,14 +2,12 @@ import logo from '../Img/logo.png';
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome,faBug, faSignOut,faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faHome,faSignOut,faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Dropdown } from 'react-bootstrap';
 import {useNavigate} from 'react-router-dom';
 import './Header.css';
 import axios from 'axios';
 import SessionTimeout from '../SessionTimeout';
-import { RiCustomerService2Fill } from "react-icons/ri";
-import html2canvas from 'html2canvas';
 
 function Header() {
     const [userName, setUserName] = useState('');

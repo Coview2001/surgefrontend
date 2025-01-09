@@ -14,7 +14,7 @@ import {
   Modal,
   IconButton,
 } from '@mui/material';
-import BugReportIcon from '@mui/icons-material/BugReport';
+// import BugReportIcon from '@mui/icons-material/BugReport';
 import CircularProgress from '@mui/material/CircularProgress';
 import CommentIcon from '@mui/icons-material/Comment';
 import CloseIcon from '@mui/icons-material/Close';

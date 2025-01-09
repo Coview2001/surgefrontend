@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-sql';
 import 'ace-builds/src-noconflict/theme-textmate';
@@ -27,8 +27,6 @@ import 'ace-builds/src-noconflict/theme-eclipse';
 import 'ace-builds/src-noconflict/theme-github';
 import 'ace-builds/src-noconflict/theme-gruvbox';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaAngleDoubleRight, FaCheckDouble } from 'react-icons/fa';
-import { BarLoader, SyncLoader, PulseLoader } from 'react-spinners';
 import { Modal, Button, Tab, Tabs, Spinner } from 'react-bootstrap';
 import './SQLEditor.css'
 import { useNavigate } from 'react-router-dom';
@@ -37,7 +35,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../Img/logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleLeft, faHome,faTicket, faSignOut, faGreaterThan, faLessThan ,faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {  faHome,faTicket, faSignOut, faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { Dropdown } from 'react-bootstrap';
 import './Header.css';
 import axios from 'axios'
@@ -51,7 +49,6 @@ const SQLEditor = () => {
   const [sqlQuery, setSqlQuery] = useState('/*Write a all SQl commands/clauses in UPPERCASE*/');
   const [response, setResponse] = useState(null);
   const [responseTestCase, setResponseTestCase] = useState(null);
-  const [showTable, setShowTable] = useState(true);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [question, setQuestion] = useState([]);
   const [tables, setTables] = useState([]);
@@ -64,20 +61,12 @@ const SQLEditor = () => {
   const [selectedTableName, setSelectedTableName] = useState('');
   const [submittingAnswer, setSubmittingAnswer] = useState(false); 
   const navigate = useNavigate();
-  const [questionHistory, setQuestionHistory] = useState([]); 
-  const [viewedQuestions, setViewedQuestions] = useState([0]);
-  const [correctAnswers, setCorrectAnswers] = useState([]);
-  const [wrongAnswers, setWrongAnswers] = useState([]);
-  const questionButtonsContainerRef = useRef(null);
-  const [showExpectedOutput, setShowExpectedOutput] = useState(false);
   const [submissionAttempts, setSubmissionAttempts] = useState({});
-  const [submissionAttempts1, setSubmissionAttempts1] = useState({});
   const [Qn_name, setQn_name] = useState();
   const [Ans, setAns] = useState();
   const [sqlRun, setSqlRun] = useState(false);
   const [TestCases, setTestCases] = useState(false);
   const [runResponse, setRunResponse] = useState();
-  const [testCasesResult, settestCasesResult] = useState();
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [clickCount, setClickCount] = useState(0);
   const [expectedOutput, setExpectedOutput] = useState();
@@ -89,7 +78,6 @@ const SQLEditor = () => {
   const [runResponseExecutionTime, setRunResponseExecutionTime] = useState();
   const [successMessage, setSuccessMessage] = useState('');
   const [additionalMessage, setAdditionalMessage] = useState('');
-  const [additionalMessage2, setAdditionalMessage2] = useState('');
   const [show, setShow] = useState(false);
   const [qnNumber, setQnNumber] = useState();
   const [nextBtn, setNextBtn] = useState(false);

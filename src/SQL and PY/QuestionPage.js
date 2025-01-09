@@ -180,7 +180,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import HeaderQuestionPage from './HeaderQuestionPage';
 import { useNavigate } from 'react-router-dom';
-import { Button ,Spinner} from 'react-bootstrap';
+import { Spinner} from 'react-bootstrap';
 import CryptoJS from 'crypto-js';
 
 
@@ -192,12 +192,6 @@ const QuestionPage = () => {
     const [loading, setLoading] = useState(true);  
     const navigate = useNavigate();
     const secretKey = 'gvhbfijsadfkefjnujrbghj';
-    const encryptedName = sessionStorage.getItem('Name');// Decrypt the data
-    const decryptedName = CryptoJS.AES.decrypt(encryptedName, secretKey).toString(CryptoJS.enc.Utf8);
-    const encryptedEmail = sessionStorage.getItem('Email');// Decrypt the data
-    const decryptedEmail = CryptoJS.AES.decrypt(encryptedEmail, secretKey).toString(CryptoJS.enc.Utf8);
-    const encryptedPicture = sessionStorage.getItem('Picture');// Decrypt the data
-    const decryptedPicture = CryptoJS.AES.decrypt(encryptedPicture, secretKey).toString(CryptoJS.enc.Utf8);
     const encryptedStudentId = sessionStorage.getItem('StudentId');// Decrypt the data
     const decryptedStudentId = CryptoJS.AES.decrypt(encryptedStudentId, secretKey).toString(CryptoJS.enc.Utf8);
     const encryptedcourse = sessionStorage.getItem('course');// Decrypt the data

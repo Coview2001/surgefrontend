@@ -6,24 +6,24 @@ import {
 } from "material-react-table";
 import {
   Box,
-  Typography,
-  Grid,
-  Paper,
-  TextField,
-  Button,
-  Snackbar,
-  List,
-  ListItem,
-  ListItemText,
-  Modal,
-  IconButton,
+  // Typography,
+  // Grid,
+  // Paper,
+  // TextField,
+  // Button,
+  // Snackbar,
+  // List,
+  // ListItem,
+  // ListItemText,
+  // Modal,
+  // IconButton,
 } from "@mui/material";
-import BugReportIcon from "@mui/icons-material/BugReport";
-import CommentIcon from "@mui/icons-material/Comment";
-import CloseIcon from "@mui/icons-material/Close";
-import { useParams } from "react-router-dom";
+// import BugReportIcon from "@mui/icons-material/BugReport";
+// import CommentIcon from "@mui/icons-material/Comment";
+// import CloseIcon from "@mui/icons-material/Close";
+// import { useParams } from "react-router-dom";
 // import Hexagon from "../../components/Hexagon";
-import CoursePageHeaderHome from './CoursePageHeaderHome'
+// import CoursePageHeaderHome from './CoursePageHeaderHome'
 import {Spinner } from 'react-bootstrap';
 import  DetailPanel from './DetailPanel'
 import HeaderHome from "./HeaderHome";

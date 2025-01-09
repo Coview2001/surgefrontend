@@ -3,16 +3,14 @@ import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-python';
 import 'ace-builds/src-noconflict/theme-dreamweaver';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaAngleDoubleRight, FaCheckDouble } from 'react-icons/fa';
-import { BarLoader, SyncLoader , BeatLoader} from 'react-spinners';
+import { BeatLoader} from 'react-spinners';
 import { Modal, Button, Spinner } from 'react-bootstrap';
 import './PyEditor.css'
-import HeaderEditor from './HeaderEditor';
 import { useNavigate } from 'react-router-dom';
 import logo from '../Img/logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope,faBell, faHome,faBug, faSignOut, faGreaterThan, faLessThan, faRectangleXmark,faTicket  } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSignOut, faGreaterThan, faLessThan, faTicket  } from '@fortawesome/free-solid-svg-icons';
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { Dropdown } from 'react-bootstrap';
 import './Header.css';
@@ -25,12 +23,9 @@ const PyEditor = () => {
   const inputHandlerRef = useRef(null); 
   const [pythonCode, setPythonCode] = useState('');
   const [output, setOutput] = useState('');
-  const [inputQueue, setInputQueue] = useState([]); 
-  const [sqlQuery, setSqlQuery] = useState('');
   const [response, setResponse] = useState(null);
   const [responseTestCase, setResponseTestCase] = useState(null);
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [executingQuery, setExecutingQuery] = useState(false);
   const [submitCount, setSubmitCount] = useState(0);
@@ -48,27 +43,15 @@ const PyEditor = () => {
   const [outputHeightPercentage, setOutputHeightPercentage] = useState(45); 
   
   const navigate = useNavigate();
-  const [questionHistory, setQuestionHistory] = useState([]);
-  const [viewedQuestions, setViewedQuestions] = useState([0]);
-  const [correctAnswers, setCorrectAnswers] = useState([]);
-  const [wrongAnswers, setWrongAnswers] = useState([]);
-  const questionButtonsContainerRef = useRef(null);
-  const [showExpectedOutput, setShowExpectedOutput] = useState(false);
   const [submissionAttempts, setSubmissionAttempts] = useState({});
-  const [ConceptID, setConceptID] = useState();
   const [Qn_name, setQn_name] = useState();
   const [Ans, setAns] = useState();
   const [submissionAttempts1, setSubmissionAttempts1] = useState({});
   const [pyRun, setPyRun] = useState(false);
   
   const [question, setQuestion] = useState([]);
-  const [tables, setTables] = useState([]);
-  const [showAlertFinish, setShowAlertFinish] = useState(false);
   const [activeTab, setActiveTab] = useState('tables');
-  const [selectedTableName, setSelectedTableName] = useState('');
-  const [TestCases, setTestCases] = useState(false);
   const [runResponse, setRunResponse] = useState();
-  const [testCasesResult, settestCasesResult] = useState();
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [clickCount, setClickCount] = useState(0);
   const [expectedOutput, setExpectedOutput] = useState();
@@ -80,7 +63,6 @@ const PyEditor = () => {
   const [runResponseExecutionTime, setRunResponseExecutionTime] = useState();
   const [successMessage, setSuccessMessage] = useState('');
   const [additionalMessage, setAdditionalMessage] = useState('');
-  const [show, setShow] = useState(false);
   const [qnNumber, setQnNumber] = useState('');
   const [example, setExample] = useState();
   const [functionCall, setFunctionCall] = useState('');
@@ -113,7 +95,6 @@ const [ticketRaised, setTicketRaised] = useState(false)
 const [isCapturingScreenshot, setIsCapturingScreenshot] = useState(false);
 const [showConfirmModal, setShowConfirmModal] = useState(false);
 const [showOutput, setShowOutput] = useState(false);
-const outputRef = useRef(null);
 const [responseAttempt, setResponseAttempt] = useState(0);
 const [isRunClicked, setIsRunClicked] = useState(false);
 const [isCheckClicked, setIsCheckClicked] = useState(false);

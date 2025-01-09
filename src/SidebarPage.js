@@ -1,8 +1,6 @@
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Pointer, PointerIcon } from 'lucide-react';
 import React, { useState } from 'react';
-import { FaReact } from 'react-icons/fa'; // Import the React logo from react-icons
 import { PiVideoConference } from "react-icons/pi";
 
 

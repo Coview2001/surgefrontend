@@ -1,6 +1,6 @@
 
-import React, { useState, useMemo } from 'react';
-import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './TableComponent.css'
 
 // Ensure you have Bootstrap CSS imported in your project

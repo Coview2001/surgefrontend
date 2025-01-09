@@ -281,7 +281,7 @@ import logo from '../Img/logo.png';
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faSignOut, faTicket, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSignOut, faTicket } from '@fortawesome/free-solid-svg-icons';
 import { Dropdown, Modal, Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './HeaderQuestionPage.css';
@@ -296,7 +296,6 @@ function HeaderQuestionPageFrontend() {
     const [userEmail, setuserEmail] = useState('');
     const [userPicture, setuserPicture] = useState('');
     const [StudentId, setStudentId] = useState('');
-    const [qn_Number, setQn_Number] = useState('');
     const [course, setCourse] = useState('');
     const [isCapturingScreenshot, setIsCapturingScreenshot] = useState(false);
     const [ticketRaised, setTicketRaised] = useState(false);

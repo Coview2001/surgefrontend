@@ -19,12 +19,9 @@ const NextQuestionPage = () => {
   const inputHandlerRef = useRef(null); // Store the input handler reference
   const [pythonCode, setPythonCode] = useState('');
   const [output, setOutput] = useState('');
-  const [inputQueue, setInputQueue] = useState([]); // To store inputs
-  const [sqlQuery, setSqlQuery] = useState('');
   const [response, setResponse] = useState(null);
   const [responseTestCase, setResponseTestCase] = useState(null);
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [executingQuery, setExecutingQuery] = useState(false);
   const [submitCount, setSubmitCount] = useState(0);
@@ -43,14 +40,7 @@ const NextQuestionPage = () => {
   const [outputHeightPercentage, setOutputHeightPercentage] = useState(45); // in percentage (vh)
   
   const navigate = useNavigate();
-  const [questionHistory, setQuestionHistory] = useState([]); // Track visited questions
-  const [viewedQuestions, setViewedQuestions] = useState([0]);
-  const [correctAnswers, setCorrectAnswers] = useState([]);
-  const [wrongAnswers, setWrongAnswers] = useState([]);
-  const questionButtonsContainerRef = useRef(null);
-  const [showExpectedOutput, setShowExpectedOutput] = useState(false);
   const [submissionAttempts, setSubmissionAttempts] = useState({});
-  const [ConceptID, setConceptID] = useState();
   const [Qn_name, setQn_name] = useState();
   const [Ans, setAns] = useState();
   const [submissionAttempts1, setSubmissionAttempts1] = useState({});
@@ -58,12 +48,8 @@ const NextQuestionPage = () => {
   
   const [question, setQuestion] = useState([]);
   const [tables, setTables] = useState([]);
-  const [showAlertFinish, setShowAlertFinish] = useState(false);
   const [activeTab, setActiveTab] = useState('tables');
-  const [selectedTableName, setSelectedTableName] = useState('');
-  const [TestCases, setTestCases] = useState(false);
   const [runResponse, setRunResponse] = useState();
-  const [testCasesResult, settestCasesResult] = useState();
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [clickCount, setClickCount] = useState(0);
   const [expectedOutput, setExpectedOutput] = useState();

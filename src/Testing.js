@@ -375,9 +375,9 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Card, Spinner, Button } from 'react-bootstrap';
+import { Row, Col, Card, Spinner, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClockFour,faBars, faChevronLeft, faChevronRight, faPenFancy} from '@fortawesome/free-solid-svg-icons';
+import { faClockFour, faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import './CoursePage.css'
 import CoursePageHeaderHome from './CoursePageHeaderHome'
@@ -386,8 +386,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { PiStudent  } from "react-icons/pi";
 import { SiGooglemeet  } from "react-icons/si";
 import CryptoJS from 'crypto-js';
-import Settings from './settings'
-import WifiPing from './WifiPing';
 
 
 
@@ -400,18 +398,18 @@ const Testing = () => {
   const [loadingC1, setLoadingC1] = useState(true);
   const [loadingC3, setLoadingC3] = useState(true);
   const [internship, setInternship] = useState('');
-  const [progressScore, setProgressScore] = useState('');
+  // const [progressScore, setProgressScore] = useState('');
   const [progressData, setProgressData] = useState(null);
   const courseContainerRef = useRef(null);
   const navigate = useNavigate();
   const [selectedSubIndex, setSelectedSubIndex] = useState(-1);
-  const [selectedDate, setSelectedDate] = useState();
+  // const [selectedDate, setSelectedDate] = useState();
   const [hoursSpent, setHoursSpent] = useState(null);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [showStartInput, setShowStartInput] = useState(false);
   const [showEndInput, setShowEndInput] = useState(false);
-  const [duration, setDuration] = useState();
+  // const [duration, setDuration] = useState();
   const [isOpen, setIsOpen] = useState(false);
   const [status, setStatus] = useState('');
   const [ranks, setRanks] = useState();

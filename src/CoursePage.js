@@ -386,11 +386,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { PiStudent  } from "react-icons/pi";
 import { SiGooglemeet  } from "react-icons/si";
 import CryptoJS from 'crypto-js';
-import Settings from './settings'
-import WifiPing from './WifiPing';
-
-
-
 
 
 const CoursePage = () => {

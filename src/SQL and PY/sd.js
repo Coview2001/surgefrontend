@@ -27,12 +27,10 @@ import 'ace-builds/src-noconflict/theme-eclipse';
 import 'ace-builds/src-noconflict/theme-github';
 import 'ace-builds/src-noconflict/theme-gruvbox';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaAngleDoubleRight, FaCheckDouble } from 'react-icons/fa';
 import { BarLoader, SyncLoader, PulseLoader } from 'react-spinners';
 import { Modal, Button, Tab, Tabs } from 'react-bootstrap';
 import './SQLEditor.css'
 import { useNavigate } from 'react-router-dom';
-import { Border } from 'react-bootstrap-icons';
 import Header from './Header';
 
 
@@ -56,20 +54,11 @@ const SQLEditor = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [initialX, setInitialX] = useState(null);
   const navigate = useNavigate();
-  const [questionHistory, setQuestionHistory] = useState([]); 
-  const [viewedQuestions, setViewedQuestions] = useState([0]);
-  const [correctAnswers, setCorrectAnswers] = useState([]);
-  const [wrongAnswers, setWrongAnswers] = useState([]);
-  const questionButtonsContainerRef = useRef(null);
-  const [showExpectedOutput, setShowExpectedOutput] = useState(false);
   const [submissionAttempts, setSubmissionAttempts] = useState({});
-  const [submissionAttempts1, setSubmissionAttempts1] = useState({});
   const [Qn_name, setQn_name] = useState();
   const [Ans, setAns] = useState();
   const [sqlRun, setSqlRun] = useState(false);
-  const [TestCases, setTestCases] = useState(false);
   const [runResponse, setRunResponse] = useState();
-  const [testCasesResult, settestCasesResult] = useState();
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [clickCount, setClickCount] = useState(0);
   const [expectedOutput, setExpectedOutput] = useState();

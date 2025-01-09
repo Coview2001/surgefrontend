@@ -251,7 +251,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Dropdown, Spinner, Modal } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignOut, faBug, faHome, faTicket, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faSignOut, faHome, faTicket } from '@fortawesome/free-solid-svg-icons';
 import html2canvas from 'html2canvas';
 import axios from 'axios';
 import logo from './Img/logo.png';

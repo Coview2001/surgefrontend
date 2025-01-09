@@ -1,26 +1,22 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import { Container, Row, Col, Card, Spinner, Button } from "react-bootstrap";
+import { Row, Col, Card, Spinner, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
-  faBars,
-  faArrowAltCircleRight,
   faClockFour,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import "./InternshipDashboard.css";
 import IntershipHeader from "./IntershipHeader";
 import CryptoJS from "crypto-js";
-import { FaArrowAltCircleRight, FaArrowCircleLeft } from "react-icons/fa";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 import {
   HiMiniArrowRightStartOnRectangle,
   HiMiniArrowLeftStartOnRectangle,
 } from "react-icons/hi2";
 import { PiArrowFatRightFill } from "react-icons/pi";
-import { TextWrap } from "react-bootstrap-icons";
-import CustomCard from "./CustomCard";
 import "./InternshipDashboard.css";
 const InternshipDashboard = () => {
   const [courses, setCourses] = useState([]);

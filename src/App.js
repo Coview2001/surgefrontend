@@ -139,7 +139,6 @@
 
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
-import axios from "axios"; // Import axios for HTTP requests
 import Login from "./Login";
 import CoursePage from "./CoursePage";
 import Header from "./SQL and PY/Header";
@@ -176,16 +175,12 @@ import Tickets from './Tickets';
 import BugReportPage from './BugReportPage';
 import ExskilenceInternshipCard from './ExskilenceInternshipCard';
 import CoursePageHeaderHome from "./CoursePageHeaderHome";
-import html2canvas from 'html2canvas';
 import SessionsPage from './SessionsPage';
 import SidebarPage from "./SidebarPage";
 import IntershipIndexPage1 from './Intership Pgm/IntershipIndexPage1';
 import InternshipSidebar from "./Intership Pgm/InternshipSidebar";
 import Error504 from "./Error504";
 import InternshipDashboard from "./Intership Pgm/InternshipDashboard";
-import Sidebar2 from './Intership Pgm/Sidebar';
-import Maintainence from "./Maintainence";
-import WifiPing from "./WifiPing";
 import ChatApp from './ChatApp';
 import Frontendnew from "./Intership Pgm/Frontendnew";
 import DBFrontendnew from "./Intership Pgm/DBFrontendnew";

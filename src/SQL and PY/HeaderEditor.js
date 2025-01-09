@@ -6,8 +6,7 @@ import { faHome,faBug, faSignOut, faGreaterThan, faLessThan, faTicket } from '@f
 import { Dropdown } from 'react-bootstrap';
 import {useNavigate} from 'react-router-dom';
 import './HeaderEditor.css';
-import html2canvas from 'html2canvas';
-import { PiGreaterThan, PiGreaterThanLight } from "react-icons/pi";
+import { PiGreaterThanLight } from "react-icons/pi";
 import axios from 'axios'
 
 function HeaderEditor() {

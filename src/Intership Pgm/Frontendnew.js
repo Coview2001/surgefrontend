@@ -1,41 +1,22 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { Tab, Tabs, Modal, Button, Spinner, Dropdown } from "react-bootstrap";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CodeMirror from "@uiw/react-codemirror";
 import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
 import { javascript } from "@codemirror/lang-javascript";
-import { python } from "@codemirror/lang-python";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Frontend.css";
 import { FadeLoader, PulseLoader } from "react-spinners";
-import IntershipHeader from "./IntershipHeader";
-import JsonTreeComponent from "./JsonTreeComponent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faSquarePollHorizontal,
   faCheckCircle,
   faCircleXmark,
   faExpand,
-  faCircleInfo,
-  faMagnifyingGlass,
-  faTicket,
 } from "@fortawesome/free-solid-svg-icons";
 import CryptoJS from "crypto-js";
-// import NotFound from '../NotFound'
-import {
-  faArrowAltCircleLeft,
-  faHome,
-  faSignOut,
-  faGreaterThan,
-  faLessThan,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
-import SessionTimeout from "../SessionTimeout";
 import axios from "axios";
-import logo from "../Img/logo.png";
 import html2canvas from "html2canvas";
-import { RiCustomerService2Fill } from "react-icons/ri";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/theme-dreamweaver";
@@ -70,7 +51,6 @@ const Frontendnew = () => {
     const [testResult, setTestResult] = useState(null);
     const [testMessage, setTestMessage] = useState(null);
     const [TestValid, setTestValid] = useState();
-    const [isCSSValid, setIsCSSValid] = useState();
     const [alertMessage, setAlertMessage] = useState("");
     const [explanation, setExplanation] = useState("");
 
@@ -97,14 +77,8 @@ const Frontendnew = () => {
     const secretKey = "gvhbfijsadfkefjnujrbghj";
     const encryptedStudentId = sessionStorage.getItem("StudentId");
     const decryptedStudentId = CryptoJS.AES.decrypt(encryptedStudentId,secretKey).toString(CryptoJS.enc.Utf8);
-    const encryptedPicture = sessionStorage.getItem("Picture");
-    const decryptedPicture = CryptoJS.AES.decrypt(encryptedPicture,secretKey).toString(CryptoJS.enc.Utf8);
-    const encryptedcourse = sessionStorage.getItem("course");
-    const decryptedcourse = CryptoJS.AES.decrypt(encryptedcourse,secretKey).toString(CryptoJS.enc.Utf8);
     const encryptedEmail = sessionStorage.getItem("Email");
     const decryptedEmail = CryptoJS.AES.decrypt(encryptedEmail,secretKey).toString(CryptoJS.enc.Utf8);
-    const encryptedName = sessionStorage.getItem("Name");
-    const decryptedName = CryptoJS.AES.decrypt(encryptedName, secretKey).toString(CryptoJS.enc.Utf8);
     const encryptedprojectpage = sessionStorage.getItem("ProjectPage ");
     const decryptedprojectpage = CryptoJS.AES.decrypt(encryptedprojectpage,secretKey).toString(CryptoJS.enc.Utf8);
     const encryptedprojectname = sessionStorage.getItem("ProjectName ");

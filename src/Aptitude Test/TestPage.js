@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Card, ProgressBar, Modal, Button } from "react-bootstrap";
 import "./TestPage.css";
 import HeaderStd from '../HeaderStd';
-import axios from "axios";
 import { ScaleLoader, RiseLoader} from 'react-spinners';
 import { FaRegCheckSquare, FaAngleRight, FaAngleDoubleRight, FaThumbsUp } from 'react-icons/fa';
 

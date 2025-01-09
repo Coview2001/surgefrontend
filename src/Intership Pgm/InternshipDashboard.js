@@ -40,28 +40,9 @@ const InternshipDashboard = () => {
     }
     return map[input.toLowerCase()] || input;
   }
-  const sidebarStyle = {
-    height: "100%",
-    width: isOpen ? "300px" : "60px",
-    position: "fixed",
-    top: 0,
-    left: 0,
-    backgroundColor: "#faf6fe",
-    color: "#000",
-    transition: "width 0.3s ease",
-    overflow: "hidden",
-    cursor: "pointer",
-    boxShadow: "0 4px 8px rgba(115,53,183,0.3)",
-  };
   const mainContentStyle = {
     marginLeft: isOpen ? "300px" : "0px",
     transition: "margin-left 0.3s ease",
-  };
-  const iconButtonStyle = {
-    backgroundColor: "transparent",
-    border: "none",
-    cursor: "pointer",
-    fontSize: "32px",
   };
   const getHeightForPage = (course) => {
     if (course === "Database_setup") {

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { PacmanLoader } from 'react-spinners';
 import { Modal, Button, Spinner } from 'react-bootstrap'; 
 import { useNavigate } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
@@ -15,7 +14,6 @@ function Login() {
     const [, setUserName] = useState('');
     const [email, setuserEmail] = useState('');
     const [, setuserpicture] = useState('');
-    const [, setProfile] = useState(null);
     const [loading, setLoading] = useState(false);
     const [showAlert, setShowAlert] = useState(false); 
     const [alertMessage, setAlertMessage] = useState(''); 

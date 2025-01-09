@@ -90,14 +90,14 @@ import logo from '../Img/logo.png';
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome,faBug, faSignOut, faGreaterThan, faLessThan, faEnvelope, faTicket } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSignOut, faGreaterThan, faTicket } from '@fortawesome/free-solid-svg-icons';
 import { Dropdown } from 'react-bootstrap';
 import {useNavigate} from 'react-router-dom';
 import './HeaderQuestionPage.css';
 import axios from 'axios'
 import SessionTimeout from '../SessionTimeout';
 import { RiCustomerService2Fill } from "react-icons/ri";
-import { Modal, Button, Spinner } from 'react-bootstrap';
+import { Modal, Spinner } from 'react-bootstrap';
 import html2canvas from 'html2canvas';
 import CryptoJS from 'crypto-js';
 

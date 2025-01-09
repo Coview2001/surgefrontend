@@ -908,7 +908,6 @@
 // export default HTMLCSSEditor ;
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import AceEditor from 'react-ace';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import CodeMirror from "@uiw/react-codemirror";
@@ -918,33 +917,21 @@ import { css } from '@codemirror/lang-css';
 // import { FaPhoenixFramework } from 'react-icons/fa';
 import { BarLoader, SyncLoader } from 'react-spinners';
 import './HTMLCSSEditor.css'
-import { Tab, Tabs, Modal, Button } from 'react-bootstrap';
+import {  Modal, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquarePollHorizontal,faCheckCircle,faCircleXmark,faExpand, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle,faCircleXmark,faExpand, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import HeaderEditor from './HeaderEditor';
 import { useNavigate } from 'react-router-dom';
 
 // import * as XLSX from 'xlsx';
-import sk from 'skulpt';
 import TableComponent from './TableComponent';
 import CSSComponent from './CSSComponent';
 
 
 const HTMLCSSEditor  = () => {
-  const inputHandlerRef = useRef(null); // Store the input handler reference
-  // const [pythonCode, setPythonCode] = useState('');
-  const [output, setOutput] = useState('');
-  const [inputQueue, setInputQueue] = useState([]); // To store inputs
-  const [sqlQuery, setSqlQuery] = useState('');
-  const [response, setResponse] = useState(null);
-  const [responseTestCase, setResponseTestCase] = useState(null);
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [questions, setQuestions] = useState([]);
+  const [output, setOutput] = useState('');;
   const [loading, setLoading] = useState(true);
-  const [executingQuery, setExecutingQuery] = useState(false);
-  const [submitCount, setSubmitCount] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
-  const [submittingAnswer, setSubmittingAnswer] = useState(false); 
   // const [splitOffset, setSplitOffset] = useState(1000);
   const [splitOffset, setSplitOffset] = useState(window.innerWidth / 2);
 
@@ -959,29 +946,11 @@ const HTMLCSSEditor  = () => {
   const [outputHeightPercentage, setOutputHeightPercentage] = useState(45); // in percentage (vh)
   
   const navigate = useNavigate();
-  const [questionHistory, setQuestionHistory] = useState([]); // Track visited questions
-  const [viewedQuestions, setViewedQuestions] = useState([0]);
-  const [correctAnswers, setCorrectAnswers] = useState([]);
-  const [wrongAnswers, setWrongAnswers] = useState([]);
-  const questionButtonsContainerRef = useRef(null);
-  const [submissionAttempts, setSubmissionAttempts] = useState({});
-  const [ConceptID, setConceptID] = useState();
   const [Qn_name, setQn_name] = useState();
-  const [submissionAttempts1, setSubmissionAttempts1] = useState({});
-  const [pyRun, setPyRun] = useState(false);
-  
   const [question, setQuestion] = useState([]);
-  const [showAlertFinish, setShowAlertFinish] = useState(false);
   const [activeTab, setActiveTab] = useState('html');
-  const [selectedTableName, setSelectedTableName] = useState('');
-  const [runResponse, setRunResponse] = useState();
-  const [submissionSuccess, setSubmissionSuccess] = useState(false);
-  const [clickCount, setClickCount] = useState(0);
   const [data, setData] = useState();
-  const [testCase, setTestCase] = useState([]);
   const [questionName, setQuestionName] = useState();
-  const [runResponseTable, setRunResponseTable] = useState();
-  const [runResponseExecutionTime, setRunResponseExecutionTime] = useState();
   const [successMessage, setSuccessMessage] = useState('');
   const [additionalMessage, setAdditionalMessage] = useState('');
   const [show, setShow] = useState(false);
@@ -1007,8 +976,6 @@ const HTMLCSSEditor  = () => {
   const [cssHomeData, setcssHomeData] = useState();
   const [imageView, setImageView] = useState(false);
   const [displ, setdispl] = useState('');
-  const [htmlTags, setHtmlTags] = useState([]);
-  const [cssAttributes, setCssAttributes] = useState([]);
 
 
   const handleTab = (selectedKey) => {

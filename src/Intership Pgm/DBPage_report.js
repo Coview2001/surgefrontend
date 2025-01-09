@@ -20,12 +20,8 @@ function DBPage_report() {
     navigate('/InternshipDashboard');
   };
   const secretKey = 'gvhbfijsadfkefjnujrbghj';
-  const encryptedEmail = sessionStorage.getItem('Email');// Decrypt the data
-  const decryptedEmail = CryptoJS.AES.decrypt(encryptedEmail, secretKey).toString(CryptoJS.enc.Utf8);
   const encryptedStudentId = sessionStorage.getItem('StudentId');
   const decryptedStudentId = CryptoJS.AES.decrypt(encryptedStudentId, secretKey).toString(CryptoJS.enc.Utf8);
-  const encryptedName = sessionStorage.getItem('Name');
-  const decryptedName = CryptoJS.AES.decrypt(encryptedName, secretKey).toString(CryptoJS.enc.Utf8);
   const encryptedprojectname = sessionStorage.getItem("ProjectName ");
   const decryptedprojectname = CryptoJS.AES.decrypt(encryptedprojectname,secretKey).toString(CryptoJS.enc.Utf8)?.replace("_", " ");
   const handleCopyCode = (code, key) => {

@@ -178,7 +178,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import HeaderQuestionPageFrontend from './HeaderQuestionPageFrontend';
 import { useNavigate } from 'react-router-dom';
-import { Button, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import './QuestionPageFrontend.css';
 import CryptoJS from 'crypto-js'; // Assuming you're using CryptoJS library
 

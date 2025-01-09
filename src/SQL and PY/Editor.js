@@ -57,33 +57,14 @@ const Editor = () => {
   const [outputHeightPercentage, setOutputHeightPercentage] = useState(45); // in percentage (vh)
   
   const navigate = useNavigate();
-  const [questionHistory, setQuestionHistory] = useState([]); // Track visited questions
-  const [viewedQuestions, setViewedQuestions] = useState([0]);
-  const [correctAnswers, setCorrectAnswers] = useState([]);
-  const [wrongAnswers, setWrongAnswers] = useState([]);
-  const questionButtonsContainerRef = useRef(null);
-  const [submissionAttempts, setSubmissionAttempts] = useState({});
-  const [ConceptID, setConceptID] = useState();
   const [Qn_name, setQn_name] = useState();
-  const [submissionAttempts1, setSubmissionAttempts1] = useState({});
-  const [pyRun, setPyRun] = useState(false);
-  
   const [question, setQuestion] = useState([]);
-  const [showAlertFinish, setShowAlertFinish] = useState(false);
   const [activeTab, setActiveTab] = useState('html');
-  const [selectedTableName, setSelectedTableName] = useState('');
-  const [runResponse, setRunResponse] = useState();
-  const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [clickCount, setClickCount] = useState(0);
   const [data, setData] = useState();
-  const [testCase, setTestCase] = useState([]);
   const [questionName, setQuestionName] = useState();
-  const [runResponseTable, setRunResponseTable] = useState();
-  const [runResponseExecutionTime, setRunResponseExecutionTime] = useState();
   const [successMessage, setSuccessMessage] = useState('');
   const [additionalMessage, setAdditionalMessage] = useState('');
-  const [show, setShow] = useState(false);
-  const [example, setExample] = useState();
   const [template, setTemplate] = useState('');
   const [nextBtn, setNextBtn] = useState(false);
   const [isNextClicked, setIsNextClicked] = useState(false); 
@@ -105,14 +86,11 @@ const Editor = () => {
   const [cssHomeData, setcssHomeData] = useState();
   const [imageView, setImageView] = useState(false);
   const [displ, setdispl] = useState('');
-  const [htmlTags, setHtmlTags] = useState([]);
-  const [cssAttributes, setCssAttributes] = useState([]);
   const [course, setCourse] = useState();
   const [userName, setUserName] = useState('');
   const [userEmail, setuserEmail] = useState('');
   const [userPicture, setuserPicture] = useState('');
   const [StudentId, setStudentId] = useState('');
-  const [day, setDay] = useState();
   const [qnNumber, setQnNumber] = useState();
   const [submitHTMLStatus, setSubmitHTMLStatus] = useState('');
   const [submitCSSStatus, setSubmitCSSStatus] = useState('');
@@ -137,8 +115,6 @@ const Editor = () => {
         'Require Tutor Assistance'
     ];
     const secretKey = 'gvhbfijsadfkefjnujrbghj';
-
-
     const encryptedPicture = sessionStorage.getItem('Picture');
     const decryptedPicture = CryptoJS.AES.decrypt(encryptedPicture, secretKey).toString(CryptoJS.enc.Utf8);
     const encryptedcourse = sessionStorage.getItem('course');

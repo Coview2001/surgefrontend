@@ -1,27 +1,17 @@
 import React, { useCallback, useState, useEffect } from 'react';
-import { Tab, Tabs, Modal,Button,Spinner,Dropdown } from 'react-bootstrap';
+import { Tab, Tabs, Modal,Button,Spinner } from 'react-bootstrap';
 import { useNavigate, useLocation  } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './DBFrontend.css'
-import { FadeLoader ,PulseLoader  } from 'react-spinners';
-import IntershipHeader from './IntershipHeader'
-import JsonTreeComponent from './JsonTreeComponent';
 import CryptoJS from 'crypto-js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleLeft, faHome,faTicket, faSignOut, faGreaterThan, faLessThan ,faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios'
-// import NotFound from '../NotFound'
-import { RiCustomerService2Fill } from "react-icons/ri"; 
 import { sql } from "@codemirror/lang-sql";
-import SessionTimeout from '../SessionTimeout';
-import logo from '../Img/logo.png';
 import html2canvas from 'html2canvas';
 import CodeMirror from "@uiw/react-codemirror";
 import InternshipHeader from './InternshipHeader';
 
 function DBFrontend() {
-  const [HTMLCSS, setHTMLCSS] = useState();
   const [activeTab, setActiveTab] = useState('Table1');
   const [table1, setTable1] = useState('');
   const [table2, setTable2] = useState('');
@@ -33,7 +23,6 @@ function DBFrontend() {
   const [alertMessage, setAlertMessage] = useState('');
   const [explanation, setExplanation] = useState('');
   const [loading, setLoading] = useState(false);
-  const [modalBgClass, setModalBgClass] = useState();
   const [TestValid, setTestValid] = useState();
   const location = useLocation();
   const [table1HomeData, setTable1HomeData] = useState();
@@ -49,7 +38,6 @@ function DBFrontend() {
   // const [isLoading, setIsLoading] = useState(false);
   const [fetchedData, setFetchedData] = useState('');
   const [tabs, setTabs] = useState([]);
-  const [executingQuery, setExecutingQuery] = useState(false);
   const [showBugReport, setShowBugReport] = useState(false);
   const [screenshot, setScreenshot] = useState(null);
   const [bugDesc, setBugDesc] = useState('');
@@ -82,16 +70,10 @@ const [splitOffset, setSplitOffset] = useState(window.innerWidth / 2);
 const secretKey = 'gvhbfijsadfkefjnujrbghj';
 const [ticketRaised, setTicketRaised] = useState(false)
 const [isCapturingScreenshot, setIsCapturingScreenshot] = useState(false);
-const encryptedPicture = sessionStorage.getItem('Picture');
-const decryptedPicture = CryptoJS.AES.decrypt(encryptedPicture, secretKey).toString(CryptoJS.enc.Utf8);
-const encryptedcourse = sessionStorage.getItem('course');
-const decryptedcourse = CryptoJS.AES.decrypt(encryptedcourse, secretKey).toString(CryptoJS.enc.Utf8);
 const encryptedStudentId = sessionStorage.getItem('StudentId');
 const decryptedStudentId = CryptoJS.AES.decrypt(encryptedStudentId, secretKey).toString(CryptoJS.enc.Utf8);
 const encryptedEmail = sessionStorage.getItem('Email');
 const decryptedEmail = CryptoJS.AES.decrypt(encryptedEmail, secretKey).toString(CryptoJS.enc.Utf8);
-const encryptedName = sessionStorage.getItem('Name');
-const decryptedName = CryptoJS.AES.decrypt(encryptedName, secretKey).toString(CryptoJS.enc.Utf8);
 const encryptedprojectpage = sessionStorage.getItem('ProjectPage ');
 const decryptedprojectpage = CryptoJS.AES.decrypt(encryptedprojectpage, secretKey).toString(CryptoJS.enc.Utf8);
 const encryptedprojectname = sessionStorage.getItem("ProjectName ");

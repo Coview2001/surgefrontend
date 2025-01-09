@@ -375,9 +375,9 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Card, Spinner, Button } from 'react-bootstrap';
+import { Row, Col, Card, Spinner, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClockFour,faBars, faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
+import { faClockFour, faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import './CoursePage.css'
 import CoursePageHeaderHome from './CoursePageHeaderHome'

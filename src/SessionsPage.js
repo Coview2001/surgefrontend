@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './SessionsPage.css';
 import HeaderHome from './HeaderHome';
 import { Spinner } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClockFour, faBars, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import CryptoJS from 'crypto-js';
 import { PiStudent } from "react-icons/pi";
 import { SiGooglemeet } from "react-icons/si";

@@ -110,7 +110,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import HeaderIndex from './HeaderIndex'
-import { Button ,Spinner} from 'react-bootstrap';
+import { Spinner} from 'react-bootstrap';
 import CryptoJS from 'crypto-js';
 const IndexPage = () => {
     const [data, setData] = useState(null);
@@ -119,12 +119,6 @@ const IndexPage = () => {
     const [Total_Days, setTotal_Days]= useState();
     const navigate = useNavigate()
     const secretKey = 'gvhbfijsadfkefjnujrbghj';
-    const encryptedName = sessionStorage.getItem('Name');// Decrypt the data
-    const decryptedName = CryptoJS.AES.decrypt(encryptedName, secretKey).toString(CryptoJS.enc.Utf8);
-    const encryptedEmail = sessionStorage.getItem('Email');// Decrypt the data
-    const decryptedEmail = CryptoJS.AES.decrypt(encryptedEmail, secretKey).toString(CryptoJS.enc.Utf8);
-    const encryptedPicture = sessionStorage.getItem('Picture');// Decrypt the data
-    const decryptedPicture = CryptoJS.AES.decrypt(encryptedPicture, secretKey).toString(CryptoJS.enc.Utf8);
     const encryptedStudentId = sessionStorage.getItem('StudentId');// Decrypt the data
     const decryptedStudentId = CryptoJS.AES.decrypt(encryptedStudentId, secretKey).toString(CryptoJS.enc.Utf8);
     const encryptedcourse = sessionStorage.getItem('course');// Decrypt the data

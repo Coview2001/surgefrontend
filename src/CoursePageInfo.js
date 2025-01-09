@@ -137,10 +137,7 @@ function CoursePageInfo() {
     return null; // Return null or default value if the data is not available
   };
 
-  const decryptedPrograss = decryptData(sessionStorage.getItem('Prograss'));
-  const decryptedAssignment = decryptData(sessionStorage.getItem('Assignment'));
   const decryptedcourse = decryptData(sessionStorage.getItem('course'));
-  const decryptedStudentId = decryptData(sessionStorage.getItem('StudentId'));
   const decryptedDuration = decryptData(sessionStorage.getItem('Duration'));
 
   useEffect(() => {

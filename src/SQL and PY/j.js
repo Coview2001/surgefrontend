@@ -1,24 +1,19 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import AceEditor from 'react-ace';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import CodeMirror from "@uiw/react-codemirror";
 import { html } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
-import { javascript } from '@codemirror/lang-javascript';
-// import { FaPhoenixFramework } from 'react-icons/fa';
-import { BarLoader, SyncLoader } from 'react-spinners';
 import './HTMLCSSEditor.css'
 import { Tab, Tabs, Modal, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquarePollHorizontal,faCheckCircle,faCircleXmark,faExpand, faCircleInfo, faMagnifyingGlass, faTicket } from '@fortawesome/free-solid-svg-icons';
-import HeaderEditor from './HeaderEditor';
+import { faCheckCircle,faCircleXmark,faExpand, faCircleInfo, faTicket } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
 import TableComponent from './TableComponent';
 import CSSComponent from './CSSComponent';
 import logo from '../Img/logo.png';
-import { faEnvelope,faBell, faHome,faBug, faSignOut, faGreaterThan, faLessThan, faRectangleXmark  } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSignOut, faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { Dropdown, Spinner } from 'react-bootstrap';
 import './Editor.css';
 import html2canvas from 'html2canvas';
@@ -29,19 +24,11 @@ import { RiCustomerService2Fill } from "react-icons/ri";
 
 
 const Editor = () => {
-  const inputHandlerRef = useRef(null); // Store the input handler reference
   // const [pythonCode, setPythonCode] = useState('');
   const [output, setOutput] = useState('');
-  const [inputQueue, setInputQueue] = useState([]); // To store inputs
-  const [response, setResponse] = useState(null);
   const [responseTestCase, setResponseTestCase] = useState(null);
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [executingQuery, setExecutingQuery] = useState(false);
-  const [submitCount, setSubmitCount] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
-  const [submittingAnswer, setSubmittingAnswer] = useState(false); 
   // const [splitOffset, setSplitOffset] = useState(1000);
   const [splitOffset, setSplitOffset] = useState(window.innerWidth / 2);
   const [DOMSTR, setDOMSTR] = useState('HTML DOM structure');
@@ -57,34 +44,16 @@ const Editor = () => {
   const [outputHeightPercentage, setOutputHeightPercentage] = useState(45); // in percentage (vh)
   
   const navigate = useNavigate();
-  const [questionHistory, setQuestionHistory] = useState([]); // Track visited questions
-  const [viewedQuestions, setViewedQuestions] = useState([0]);
-  const [correctAnswers, setCorrectAnswers] = useState([]);
-  const [wrongAnswers, setWrongAnswers] = useState([]);
-  const questionButtonsContainerRef = useRef(null);
-  const [submissionAttempts, setSubmissionAttempts] = useState({});
-  const [ConceptID, setConceptID] = useState();
   const [Qn_name, setQn_name] = useState();
-  const [submissionAttempts1, setSubmissionAttempts1] = useState({});
   const [submitStatus, setSubmitStatus] = useState('');
   
   const [question, setQuestion] = useState([]);
-  const [showAlertFinish, setShowAlertFinish] = useState(false);
   const [activeTab, setActiveTab] = useState('html');
-  const [selectedTableName, setSelectedTableName] = useState('');
-  const [runResponse, setRunResponse] = useState();
-  const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [clickCount, setClickCount] = useState(0);
   const [data, setData] = useState();
-  const [testCase, setTestCase] = useState([]);
   const [questionName, setQuestionName] = useState();
-  const [runResponseTable, setRunResponseTable] = useState();
-  const [runResponseExecutionTime, setRunResponseExecutionTime] = useState();
   const [successMessage, setSuccessMessage] = useState('');
   const [additionalMessage, setAdditionalMessage] = useState('');
-  const [show, setShow] = useState(false);
-  const [example, setExample] = useState();
-  const [template, setTemplate] = useState('');
   const [nextBtn, setNextBtn] = useState(false);
   const [isNextClicked, setIsNextClicked] = useState(false); 
   const [qn_Number, setQn_Number] = useState();
@@ -101,11 +70,8 @@ const Editor = () => {
   const [jsEdit, setJsEdit] = useState('');
   const [showSubmitButton, setShowSubmitButton] = useState(false);
   const [validationStatus, setValidationStatus] = useState({});
-  const [cssHomeData, setcssHomeData] = useState();
   const [imageView, setImageView] = useState(false);
   const [displ, setdispl] = useState('');
-  const [htmlTags, setHtmlTags] = useState([]);
-  const [cssAttributes, setCssAttributes] = useState([]);
   const [course, setCourse] = useState();
   const [userName, setUserName] = useState('');
   const [userEmail, setuserEmail] = useState('');

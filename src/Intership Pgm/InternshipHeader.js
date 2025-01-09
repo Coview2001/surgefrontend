@@ -281,7 +281,7 @@ import logo from '../Img/logo.png';
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faSignOut, faTicket, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSignOut, faTicket } from '@fortawesome/free-solid-svg-icons';
 import { Dropdown, Modal, Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import html2canvas from 'html2canvas';
