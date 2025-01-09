@@ -1,0 +1,67 @@
+.head{
+  background-color: #9CCCD7;
+
+}
+  .nav-link:hover .fa-icon {
+    font-size: 24px; 
+  }
+  .custom-btn {
+    border: none; 
+    background-color: #9CCCD7;
+  }
+.custom-btn:hover{
+    transform: scale(1.06);
+    transition: 0.3s;
+    /* box-shadow: 2px 3px 10px 8px #2e6d6d7a; */
+    background-color: #96bbcc
+    
+}  
+.custom-user-btn{
+  color: #9CCCD7;
+  /* animation: custom-user-btn-glow  1.5s infinite alternate; */
+}
+.custom-user-btn:hover{
+  transform: scale(1.06);
+  transition: 0.3s;
+  /* box-shadow: 2px 3px 10px 8px #2da5a57a; */
+  background-color: #96bbcc
+} 
+
+@keyframes custom-user-btn-glow {
+  0% {
+    color: #305350b3;
+    box-shadow: 0 0 10px #305350b3
+    transparent
+  }
+  100% {
+    box-shadow: 0 0 20px #797d85b3;
+  }
+}
+
+
+.backIcon {
+  font-size: 30px;
+  color: #ffffff;
+  transition: all ease-in-out 0.3s;
+  animation: btn-glow  1.5s infinite alternate;
+}
+
+.backIcon:hover {
+  background-color: #96bbcc;
+  transform: scale(1.01);
+  transition: 0.3s;
+  /* box-shadow: 0 0 10px #305350b3; */
+  cursor: pointer;
+
+}
+
+@keyframes btn-glow {
+  0% {
+    color: #305350b3;
+    box-shadow: 0 0 10px #305350b3
+  }
+  100% {
+    box-shadow: 0 0 20px #0b57e6b3;
+  }
+}
+

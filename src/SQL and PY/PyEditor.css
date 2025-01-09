@@ -1,0 +1,98 @@
+
+  .body {
+    display: flex;
+  }
+  
+  .body > div:nth-child(2) {
+    width: 100%;
+  }
+  .Qn{
+    font: bolder;
+    color: #000000;
+    font-size:x-large;
+  }
+
+
+  .testCases{
+    color: #000000;
+    background-color: #caaf95   ;
+
+  }
+  .expectedOutput{
+    color: #000000;
+    background-color: #95cac0   ;
+
+  }
+  .curserDivPy{
+    padding: 0px 1px;
+    cursor: col-resize;
+    width: 0px;
+    height:90vh;
+    margin-top:10px;
+    border-radius: 10px;
+    background-color: rgb(158, 206, 218);
+  }
+
+  .curserDivPy:hover{
+    background-color: #ffffff;
+  }
+
+  .highlighted-btn {
+    background-color: #07cdff; 
+    color: black;
+  }
+  
+  .sqlExerciseHeader{
+    color: #000000;
+    background-color: #c3e8ec;
+    width: 100%; 
+    margin: 0;
+    padding: 0; 
+  }
+
+  .visited-question {
+    background-color: #ffc107; 
+  }
+  
+  .correct-answer {
+    background-color: #28a745; 
+  }
+  
+  .qns-bts.default { 
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .qns-bts.visited { 
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  .qns-bts.success { 
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .qns-bts.danger { 
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .ace_gutter-layer{
+  background: #ffffff; 
+
+  }
+
+  /* custom-ace-editor.css */
+.ace_dreamweaver .ace_gutter {
+  background: #ffffff; 
+  color: #333; 
+}
+
+.ace_dreamweaver .ace_gutter .ace_gutter-active-line {
+  background: #ffffff; 
+}
+
+.ace-dreamweaver .ace_comment {
+  color:#000000d1
+}
