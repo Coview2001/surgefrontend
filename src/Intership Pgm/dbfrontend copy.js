@@ -14,7 +14,6 @@ import CryptoJS from 'crypto-js';
 
 
 function DBFrontend() {
-  const [HTMLCSS, setHTMLCSS] = useState();
   const [activeTab, setActiveTab] = useState('Table1');
   const [table1, setTable1] = useState('');
   const [table2, setTable2] = useState('');

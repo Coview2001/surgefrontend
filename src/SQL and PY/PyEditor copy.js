@@ -64,7 +64,6 @@ const PyEditor = () => {
   const [runResponseExecutionTime, setRunResponseExecutionTime] = useState();
   const [successMessage, setSuccessMessage] = useState('');
   const [additionalMessage, setAdditionalMessage] = useState('');
-  const [show, setShow] = useState(false);
   const [qnNumber, setQnNumber] = useState('');
   const [example, setExample] = useState();
   const [functionCall, setFunctionCall] = useState('');
@@ -97,7 +96,6 @@ const [ticketRaised, setTicketRaised] = useState(false)
 const [isCapturingScreenshot, setIsCapturingScreenshot] = useState(false);
 const [showConfirmModal, setShowConfirmModal] = useState(false);
 const [showOutput, setShowOutput] = useState(false);
-const outputRef = useRef(null);
 const [responseAttempt, setResponseAttempt] = useState(0);
 const [isRunClicked, setIsRunClicked] = useState(false);
 const [isCheckClicked, setIsCheckClicked] = useState(false);

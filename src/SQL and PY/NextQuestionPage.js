@@ -3,7 +3,6 @@ import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-python';
 import 'ace-builds/src-noconflict/theme-dreamweaver';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaAngleDoubleRight, FaCheckDouble } from 'react-icons/fa';
 import { BarLoader, SyncLoader } from 'react-spinners';
 import { Modal, Button } from 'react-bootstrap';
 import './PyEditor.css'

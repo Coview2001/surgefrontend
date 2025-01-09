@@ -101,9 +101,6 @@ const Frontendnew = () => {
     const [usercodelength, setUsercodeLength] = useState(0);
   
     const [hasChanges, setHasChanges] = useState(false);
-    const handleHome = () => {
-        navigate("/CoursePage");
-      };
       const navigate = useNavigate();
       useEffect(() => {
         const fetchData = async () => {

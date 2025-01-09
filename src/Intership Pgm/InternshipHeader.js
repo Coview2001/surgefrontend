@@ -295,7 +295,6 @@ function HeaderQuestionPageFrontend() {
     const [userEmail, setuserEmail] = useState('');
     const [userPicture, setuserPicture] = useState('');
     const [StudentId, setStudentId] = useState('');
-    const [qn_Number, setQn_Number] = useState('');
     const [course, setCourse] = useState('');
     const [isCapturingScreenshot, setIsCapturingScreenshot] = useState(false);
     const [ticketRaised, setTicketRaised] = useState(false);

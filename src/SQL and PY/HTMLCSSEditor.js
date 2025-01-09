@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import CodeMirror from "@uiw/react-codemirror";
@@ -47,9 +47,6 @@ const HTMLCSSEditor = () => {
   const [questionName, setQuestionName] = useState();
   const [successMessage, setSuccessMessage] = useState('');
   const [additionalMessage, setAdditionalMessage] = useState('');
-  const [show, setShow] = useState(false);
-  const [example, setExample] = useState();
-  const [template, setTemplate] = useState('# Write your Python code here...');
   const [nextBtn, setNextBtn] = useState(false);
   const [isNextClicked, setIsNextClicked] = useState(false); 
   const [qn_Number, setQn_Number] = useState();
@@ -119,10 +116,6 @@ const HTMLCSSEditor = () => {
 
 
   const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 

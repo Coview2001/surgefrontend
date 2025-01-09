@@ -1,24 +1,19 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import AceEditor from 'react-ace';
+import React, { useState, useEffect,  useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CodeMirror from "@uiw/react-codemirror";
 import { html } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
 
-// import { javascript } from '@codemirror/lang-javascript';
-// import { FaPhoenixFramework } from 'react-icons/fa';
-import { BarLoader, SyncLoader } from 'react-spinners';
 import './HTMLCSSEditor.css'
 import { Tab, Tabs, Modal, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquarePollHorizontal,faCheckCircle,faCircleXmark,faExpand, faCircleInfo, faMagnifyingGlass, faTicket } from '@fortawesome/free-solid-svg-icons';
-import HeaderEditor from './HeaderEditor';
+import { faCheckCircle,faCircleXmark,faExpand, faCircleInfo,  faTicket } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
 import TableComponent from './TableComponent';
 import CSSComponent from './CSSComponent';
 import logo from '../Img/logo.png';
-import { faEnvelope,faBell, faHome,faBug, faSignOut, faGreaterThan, faLessThan, faRectangleXmark  } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSignOut, faGreaterThan, faLessThan  } from '@fortawesome/free-solid-svg-icons';
 import { Dropdown, Spinner } from 'react-bootstrap';
 import './Editor.css';
 import html2canvas from 'html2canvas';
@@ -27,21 +22,11 @@ import CryptoJS from 'crypto-js';
 import SessionTimeout from '../SessionTimeout';
 import { RiCustomerService2Fill } from "react-icons/ri";
 
-const Editor = () => {
-  const inputHandlerRef = useRef(null); // Store the input handler reference
+const Editor = () => { // Store the input handler reference
   // const [pythonCode, setPythonCode] = useState('');
   const [output, setOutput] = useState('');
-  const [inputQueue, setInputQueue] = useState([]); // To store inputs
-  const [sqlQuery, setSqlQuery] = useState('');
-  const [response, setResponse] = useState(null);
-  const [responseTestCase, setResponseTestCase] = useState(null);
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [executingQuery, setExecutingQuery] = useState(false);
-  const [submitCount, setSubmitCount] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
-  const [submittingAnswer, setSubmittingAnswer] = useState(false); 
   // const [splitOffset, setSplitOffset] = useState(1000);
   const [splitOffset, setSplitOffset] = useState(window.innerWidth / 2);
   const [DOMSTR, setDOMSTR] = useState('HTML DOM structure');

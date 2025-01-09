@@ -16,35 +16,12 @@ function Page_report() {
   const [modalBgClass, setModalBgClass] = useState('');
   const [codeToDisplay, setCodeToDisplay] = useState('');
   const secretKey = 'gvhbfijsadfkefjnujrbghj';
-  const encryptedEmail = sessionStorage.getItem('Email');// Decrypt the data
-  const decryptedEmail = CryptoJS.AES.decrypt(encryptedEmail, secretKey).toString(CryptoJS.enc.Utf8);
-  const handleGo = () => {
-    navigate('/IntershipDashboard');
-  };
-  const [editorHeightPercentage, setEditorHeightPercentage] = useState(45);
-  const [ticketRaised, setTicketRaised] = useState(false);
-  const [isCapturingScreenshot, setIsCapturingScreenshot] = useState(false);
-  const encryptedPicture = sessionStorage.getItem("Picture");
-  const decryptedPicture = CryptoJS.AES.decrypt(
-    encryptedPicture,
-    secretKey
-  ).toString(CryptoJS.enc.Utf8);
-  const encryptedcourse = sessionStorage.getItem("course");
-  const decryptedcourse = CryptoJS.AES.decrypt(
-    encryptedcourse,
-    secretKey
-  ).toString(CryptoJS.enc.Utf8);
   const encryptedStudentId = sessionStorage.getItem("StudentId");
   const decryptedStudentId = CryptoJS.AES.decrypt(
     encryptedStudentId,
     secretKey
   ).toString(CryptoJS.enc.Utf8);
-  // const decryptedStudentId = "24MRIT0010";
-  const encryptedName = sessionStorage.getItem("Name");
-  const decryptedName = CryptoJS.AES.decrypt(encryptedName, secretKey).toString(
-    CryptoJS.enc.Utf8
-  );
-    const encryptedprojectname = sessionStorage.getItem("ProjectName ");
+  const encryptedprojectname = sessionStorage.getItem("ProjectName ");
     const decryptedprojectname = CryptoJS.AES.decrypt(
       encryptedprojectname,
       secretKey

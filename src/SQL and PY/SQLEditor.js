@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-sql';
 import 'ace-builds/src-noconflict/theme-textmate';
@@ -65,7 +65,6 @@ const SQLEditor = () => {
   const [Qn_name, setQn_name] = useState();
   const [Ans, setAns] = useState();
   const [sqlRun, setSqlRun] = useState(false);
-  const [TestCases, setTestCases] = useState(false);
   const [runResponse, setRunResponse] = useState();
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [clickCount, setClickCount] = useState(0);

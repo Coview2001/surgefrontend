@@ -34,9 +34,7 @@ function IntershipHeader() {
     const handleHome = () => {
       navigate('/CoursePage');
     }
-    const handleIndex = () => {
-      navigate('/IntershipIndexPage');
-    }
+
     const secretKey = 'gvhbfijsadfkefjnujrbghj';
     const encryptedName = sessionStorage.getItem('Name');// Decrypt the data
     const decryptedName = CryptoJS.AES.decrypt(encryptedName, secretKey).toString(CryptoJS.enc.Utf8);

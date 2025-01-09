@@ -44,7 +44,6 @@ const PyEditor = () => {
   
   const navigate = useNavigate();
   const [submissionAttempts, setSubmissionAttempts] = useState({});
-  const [ConceptID, setConceptID] = useState();
   const [Qn_name, setQn_name] = useState();
   const [Ans, setAns] = useState();
   const [submissionAttempts1, setSubmissionAttempts1] = useState({});
@@ -52,7 +51,6 @@ const PyEditor = () => {
   
   const [question, setQuestion] = useState([]);
   const [activeTab, setActiveTab] = useState('tables');
-  const [TestCases, setTestCases] = useState(false);
   const [runResponse, setRunResponse] = useState();
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [clickCount, setClickCount] = useState(0);
@@ -65,7 +63,6 @@ const PyEditor = () => {
   const [runResponseExecutionTime, setRunResponseExecutionTime] = useState();
   const [successMessage, setSuccessMessage] = useState('');
   const [additionalMessage, setAdditionalMessage] = useState('');
-  const [show, setShow] = useState(false);
   const [qnNumber, setQnNumber] = useState('');
   const [example, setExample] = useState();
   const [functionCall, setFunctionCall] = useState('');
@@ -98,7 +95,6 @@ const [ticketRaised, setTicketRaised] = useState(false)
 const [isCapturingScreenshot, setIsCapturingScreenshot] = useState(false);
 const [showConfirmModal, setShowConfirmModal] = useState(false);
 const [showOutput, setShowOutput] = useState(false);
-const outputRef = useRef(null);
 const [responseAttempt, setResponseAttempt] = useState(0);
 const [isRunClicked, setIsRunClicked] = useState(false);
 const [isCheckClicked, setIsCheckClicked] = useState(false);

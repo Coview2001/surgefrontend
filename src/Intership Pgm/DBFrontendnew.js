@@ -241,22 +241,7 @@ const [table4messages, setTable4messages] = useState([]);
   
   
   
-  const handleTicket = async() =>
-    {
-      navigate('/Tickets')
-    }
-    const handleLogOut =  async() => { 
-      try {
-        const response = await axios.post('https://surgebackend.azurewebsites.net/logout/', {
-          StudentId: decryptedStudentId
-        });
-        
-        navigate('/')
-      } catch (error) {
-          console.error('Error sending comment:', error);
-          
-        }
-      };
+
       useEffect(() => {
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('mouseup', handleMouseUp);

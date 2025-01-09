@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect,  useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import CodeMirror from "@uiw/react-codemirror";
@@ -27,7 +27,6 @@ import { RiCustomerService2Fill } from "react-icons/ri";
 
 
 const JSEditor = () => {
-  const inputHandlerRef = useRef(null); // Store the input handler reference
   // const [pythonCode, setPythonCode] = useState('');
   const [output, setOutput] = useState('');
   const [responseTestCase, setResponseTestCase] = useState(null);
@@ -77,7 +76,6 @@ const JSEditor = () => {
   const [userEmail, setuserEmail] = useState('');
   const [userPicture, setuserPicture] = useState('');
   const [StudentId, setStudentId] = useState('');
-  const [day, setDay] = useState();
   const [qnNumber, setQnNumber] = useState();
   const [searchTerm, setSearchTerm] = useState('');
   const [showConfirmModal, setShowConfirmModal] = useState(false);

@@ -45,9 +45,7 @@ function InternshipInstructionHeader() {
     const decryptedStudentId = CryptoJS.AES.decrypt(encryptedStudentId, secretKey).toString(CryptoJS.enc.Utf8);
         const encryptedprojectpage = sessionStorage.getItem("ProjectPage ");
         const decryptedprojectpage = CryptoJS.AES.decrypt(encryptedprojectpage,secretKey).toString(CryptoJS.enc.Utf8);
-        const encryptedprojectname = sessionStorage.getItem("ProjectName ");
-        const decryptedprojectname = CryptoJS.AES.decrypt(encryptedprojectname,secretKey).toString(CryptoJS.enc.Utf8)?.replace("_", " ");
-
+        
     useEffect(() => {
       const storedName = decryptedName;
       const storedEmail = decryptedEmail;
