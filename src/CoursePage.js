@@ -428,40 +428,69 @@ const [sessions, setSessions] = useState([]);
 const [delay,setDelay]=useState([])
 const [errors,setError]=useState();
 useEffect(() => {
-  const fetchSessions = async () => {
+  const fetchCourse1 = async () => {
     try {
-      // Fetch all sessions
-      const sessionResponse = await fetch('https://surgemeet.azurewebsites.net/session/sessions/all/');
-      if (!sessionResponse.ok) {
-        throw new Error('Failed to fetch sessions');
+      setLoadingC1(true);
+  
+      // Making a POST request using fetch
+      const course1Response = await fetch('https://surgebackend.azurewebsites.net/get/course/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ StudentId: decryptedStudentId }),
+      });
+  
+      if (!course1Response.ok) {
+        throw new Error('Failed to fetch Course 1 data');
       }
-      const sessionData = await sessionResponse.json();
-
-      // Get the StudentId from sessionStorage
-      const studentId = decryptedStudentId;
-
-      if (studentId) {
-        // Filter the sessions where the StudentId is in the studentsinvited array
-        const filteredSessions = sessionData.filter(session => session.studentsinvited.includes(studentId));
-        setSessions(filteredSessions);
-      } else {
-        setSessions([]);
-      }
-
-      // Fetch delay information for the StudentId
-      const delayResponse = await fetch(`https://surgebackend.azurewebsites.net/delay/${decryptedStudentId}`);
-      if (!delayResponse.ok) {
-        throw new Error('Failed to fetch delay information');
-      }
-      const delayData = await delayResponse.json();
-      setDelay(delayData);
+  
+      const course1Data = await course1Response.json();
+  
+      // Updating state with the fetched data
+      setCourses(course1Data.Courses);
+      setInternship(course1Data.Intenship);
+      setStatus(course1Data.Courses.map(course => course.Status));
+      setInternshipScore(course1Data.Intenship.SubScore);
+      setProgressData(course1Data.Prograss);
+      setUserName(course1Data.StudentName);
+      setHoursSpent((parseFloat(course1Data.Prograss.Duration) / 3600).toFixed(2));
+      setLoadingC1(false);
     } catch (error) {
-      setError(error.message || 'An error occurred');
+      console.error('Error fetching Course 1:', error);
+      setLoadingC1(false); // Ensure loading state is updated even on error
     }
   };
 
-  fetchSessions();
+  const fetchCourse3 = async () => {
+    try {
+      setLoadingC3(true);
+  
+      const course3Response = await fetch('https://surgebackend.azurewebsites.net/get/course3/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ StudentId: decryptedStudentId }),
+      });
+  
+      if (!course3Response.ok) {
+        throw new Error('Failed to fetch Course 3 data');
+      }
+  
+      const course3Data = await course3Response.json();
+      setRanks(course3Data.Rank);
+      setLoadingC3(false);
+    } catch (error) {
+      console.error('Error fetching Course 3:', error);
+      setLoadingC3(false); // Ensure loading state is updated even on error
+    }
+  };
+
+  fetchCourse1();
+  fetchCourse3();
 }, []);
+
 
 
 //My code
@@ -594,18 +623,32 @@ useEffect(() => {
         const formattedStart = formatDateToISO(start);
         const formattedEnd = formatDateToISO(end);
   
+        // Making a POST request using fetch
         const response = await fetch('https://surgebackend.azurewebsites.net/duration/', {
-          StudentId: decryptedStudentId,
-          Start: formattedStart,
-          End: formattedEnd,
-        }); 
-        setHoursSpent((parseFloat(response.data.Duration) / 3600).toFixed(2)); 
-        // //console.log('Data sent to backend:', response.data);
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            StudentId: decryptedStudentId,
+            Start: formattedStart,
+            End: formattedEnd,
+          }),
+        });
+  
+        if (!response.ok) {
+          throw new Error('Failed to send data to backend');
+        }
+  
+        const data = await response.json();
+        setHoursSpent((parseFloat(data.Duration) / 3600).toFixed(2));
+        // console.log('Data sent to backend:', data);
       } catch (error) {
         console.error('Error sending data to backend:', error);
       }
     }
   };
+  
 
   const scrollCourses = (direction) => {
     const scrollAmount = 300;

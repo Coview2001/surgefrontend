@@ -34,54 +34,63 @@ function Login() {
 
     useEffect(() => {
         if (!user) return;
-
+      
         const fetchUserProfile = async () => {
-            try {
-                setLoading(true);
-                const { data } = await fetch(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`);
-                const { name, email, picture } = data;
-
-                const encryptedName = CryptoJS.AES.encrypt(name, secretKey).toString();
-                const encryptedEmail = CryptoJS.AES.encrypt(email, secretKey).toString();
-                const encryptedPicture = CryptoJS.AES.encrypt(picture, secretKey).toString();
-
-                sessionStorage.setItem('Name', encryptedName);
-                sessionStorage.setItem('Email', encryptedEmail);
-                sessionStorage.setItem('Picture', encryptedPicture);
-
-                setUserName(name);
-                setuserEmail(email);
-                setuserpicture(picture);
-
-                const sentData = { Email: email, Name: name };
-                const response = await fetch('https://surgebackend.azurewebsites.net/fetch/', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(sentData),
-                });
-
-                const result = await response.json();
-                const encryptedStudentId = CryptoJS.AES.encrypt(result.StudentId, secretKey).toString();
-                // const encryptedkeystudentid = CryptoJS.AES.encrypt("StudentId", secretKey).toString();
-                sessionStorage.setItem('StudentId', encryptedStudentId);
-
-                setLoading(false);
-                navigate(result.Overview ? '/ExskilenceInternshipCard' : '/CoursePage');
-            } catch (error) {
-                setLoading(false);
-                if (error.response?.status === 504) {
-                    navigate('/Error504');  
-                } else {
-                    setAlertMessage(`User not found with this Email "${email}". Please try again with another email.`); 
-                    setShowAlert(true);
-                    console.error('Error:', error);
-                }
+          try {
+            setLoading(true);
+            // Fetching user profile using the access token
+            const response = await fetch(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`);
+            if (!response.ok) {
+              throw new Error('Failed to fetch user profile');
             }
+            const data = await response.json();
+            const { name, email, picture } = data;
+      
+            const encryptedName = CryptoJS.AES.encrypt(name, secretKey).toString();
+            const encryptedEmail = CryptoJS.AES.encrypt(email, secretKey).toString();
+            const encryptedPicture = CryptoJS.AES.encrypt(picture, secretKey).toString();
+      
+            sessionStorage.setItem('Name', encryptedName);
+            sessionStorage.setItem('Email', encryptedEmail);
+            sessionStorage.setItem('Picture', encryptedPicture);
+      
+            setUserName(name);
+            setuserEmail(email);
+            setuserpicture(picture);
+      
+            // Sending user data to the backend using fetch
+            const sentData = { Email: email, Name: name };
+            const backendResponse = await fetch('https://surgebackend.azurewebsites.net/fetch/', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(sentData),
+            });
+      
+            if (!backendResponse.ok) {
+              throw new Error('Failed to fetch student data from backend');
+            }
+      
+            const result = await backendResponse.json();
+            const encryptedStudentId = CryptoJS.AES.encrypt(result.StudentId, secretKey).toString();
+            sessionStorage.setItem('StudentId', encryptedStudentId);
+      
+            setLoading(false);
+            navigate(result.Overview ? '/ExskilenceInternshipCard' : '/CoursePage');
+          } catch (error) {
+            setLoading(false);
+            if (error.response?.status === 504) {
+              navigate('/Error504');
+            } else {
+              setAlertMessage(`User not found with this Email "${email}". Please try again with another email.`);
+              setShowAlert(true);
+              console.error('Error:', error);
+            }
+          }
         };
-
+      
         fetchUserProfile();
-    }, [user, navigate]);
-
+      }, [user, navigate]);
+      
     return (
         <div className='login'>
             <div className="container-fluid h-100 d-flex align-items-center justify-content-center">
