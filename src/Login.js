@@ -3,7 +3,7 @@ import { PacmanLoader } from 'react-spinners';
 import { Modal, Button, Spinner } from 'react-bootstrap'; 
 import { useNavigate } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
-import axios from 'axios';
+// import axios from 'axios';
 import './Login.css';
 import GoogleLogo from './Img/search.png';
 import Loginpic from './Img/img9.png';
@@ -38,7 +38,7 @@ function Login() {
         const fetchUserProfile = async () => {
             try {
                 setLoading(true);
-                const { data } = await axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`);
+                const { data } = await fetch(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`);
                 const { name, email, picture } = data;
 
                 const encryptedName = CryptoJS.AES.encrypt(name, secretKey).toString();

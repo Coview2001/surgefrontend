@@ -89,9 +89,19 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "babel-jest": "^29.7.0",
     "batch": "^0.6.1",
     "cross-env": "^7.0.3",
     "file": "^0.2.2",
     "source-map-loader": "^5.0.0"
+  },
+  "type": "module",
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   }
 }
