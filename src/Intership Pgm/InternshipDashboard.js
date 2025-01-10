@@ -25,6 +25,7 @@ const InternshipDashboard = () => {
   const secretKey = "gvhbfijsadfkefjnujrbghj";
   const encryptedStudentId = sessionStorage.getItem("StudentId");
   const decryptedStudentId = CryptoJS.AES.decrypt(encryptedStudentId,secretKey).toString(CryptoJS.enc.Utf8);
+  // const decryptedStudentId = "24TRAI0001";
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
