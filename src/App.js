@@ -187,7 +187,11 @@ import DBFrontendnew from "./Intership Pgm/DBFrontendnew";
 import InternshipInstructionHeader from "./Intership Pgm/InternshipInstructionHeader";
 import Testing from "./Testing";
 import InternshipHeader from './Intership Pgm/InternshipHeader';
+<<<<<<< HEAD
 import Demo from "./Demo";
+=======
+import Demo from './Demo';
+>>>>>>> a2a7c9637371036bff9989746cb9328383641f5c
 
 function App() {
   const [restrictKeys, setRestrictKeys] = useState(false);
