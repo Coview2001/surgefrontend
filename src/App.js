@@ -187,7 +187,6 @@ import DBFrontendnew from "./Intership Pgm/DBFrontendnew";
 import InternshipInstructionHeader from "./Intership Pgm/InternshipInstructionHeader";
 import Testing from "./Testing";
 import InternshipHeader from './Intership Pgm/InternshipHeader';
-import Demo from `  ./Demo`;
 
 function App() {
   const [restrictKeys, setRestrictKeys] = useState(false);
@@ -229,7 +228,7 @@ function App() {
     <Router>
       <Routes>
         {/* <Route path="/" element={<Maintainence />} /> */}
-        <Route path="/" element={<Demo />} />
+        <Route path="/" element={<Login />} />
         <Route path="/rJ_Lc=VwzWrQmt%!" element={<Login />} />
         <Route path="/Error504" element={<Error504 />} />
         <Route path="/CoursePageHeaderHome" element={<CoursePageHeaderHome />} />
