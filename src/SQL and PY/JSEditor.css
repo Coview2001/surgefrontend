@@ -1,0 +1,7 @@
+.Requirements::-webkit-scrollbar {
+    display: none;
+  }
+
+.Requirements{
+    scrollbar-width: none; /* Firefox */
+  }

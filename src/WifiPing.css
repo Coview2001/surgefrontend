@@ -1,0 +1,30 @@
+.wifi-container {
+  position: fixed; /* Makes the container fixed on the screen */
+  bottom: 10px;    /* Distance from the bottom edge */
+  right: 10px;     /* Distance from the right edge */
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  z-index: 1000;   /* Ensures it appears above other elements */
+}
+
+.ping-indicator {
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding for a compact look */
+  background-color: rgba(255, 255, 255, 0.5); /* Light background with transparency */
+  font-size: 0.79rem; /* Slightly larger font */
+  justify-content: center;
+  align-items: center;
+  /* border-radius: 8px; Rounded corners */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); Subtle shadow for better visibility */
+}
+
+.ping-indicator span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85rem; /* Slightly smaller font for speed text */
+  font-weight: bold;
+}
+
+.custom-speed-meter {
+  margin-top: 20px;
+}
